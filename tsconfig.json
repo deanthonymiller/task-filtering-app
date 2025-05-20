@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "jsx": "react-jsx", // or "react" if using React 16 or earlier
+      "module": "esnext",
+      "target": "es5",
+      "strict": true,
+      "moduleResolution": "node",
+    }
+  }
