@@ -1,4 +1,4 @@
-import { Task } from "../Interfaces/Task"
+import { Task } from "./Task"
 
 export interface TaskFormProps
 {
