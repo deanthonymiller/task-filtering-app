@@ -7,6 +7,7 @@ const TaskForm = ({onAddTask}: TaskFormProps ) => {
     const [description, setDescription] = useState('');
     const [dueDate, setDueDate] = useState<Date>(new Date()); 
 
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const newTask: Task = {
@@ -15,6 +16,7 @@ const TaskForm = ({onAddTask}: TaskFormProps ) => {
             description,
             isCompleted: false,
             dueDate,
+            priority: "low"
         };
 
         onAddTask(newTask);

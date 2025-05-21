@@ -3,5 +3,6 @@ export interface Task {
     title: string,
     description: string,
     isCompleted: boolean,
-    dueDate: Date
+    dueDate: Date,
+    priority: "low" | 'medium' | 'high'
 }

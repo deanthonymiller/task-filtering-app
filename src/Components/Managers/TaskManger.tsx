@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Task } from "../../Types/Interfaces/Task";
-import TaskForm from '../../Components/TaskForm';
-import TaskList from '../../Components/TaskList';
+import TaskForm from '../TaskForm';
+import TaskList from '../TaskList';
 
 
 const TaskManager = () => {
@@ -10,6 +10,7 @@ const TaskManager = () => {
     const handleAddTask = (newTask: Task) => {
         setTasks([...tasks, newTask]);
     }
+    
     const handleDeleteTask = (taskId: number) => {
         setTasks(tasks.filter((task)=> task.id !== taskId))
     }
@@ -21,6 +22,14 @@ const TaskManager = () => {
             )
         )
     }
+
+    useEffect(()=> {
+        const savedTasks = localStorage.getItem("filteredTasks");
+        if(savedTasks){
+            setTasks(JSON.parse(savedTasks));
+        }
+    }, [tasks])
+
     return (
         <div>
             <h1>Task Manager</h1>
