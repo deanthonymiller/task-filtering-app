@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { TaskListProps } from "../Types/Interfaces/TaskListProps";
+import { TaskListProps } from "../Types/Interfaces/Tasks/TaskListProps";
 
 
 const TaskList = ({ tasks, onHandleDeleteTask, onHandleToggleCompletion }: TaskListProps) => {

@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { TaskFormProps } from "../Types/Interfaces/TaskFormProps";
-import { Task } from "../Types/Interfaces/Task";
+import { TaskFormProps } from "../Types/Interfaces/Tasks/TaskFormProps";
+import { Task } from "../Types/Interfaces/Tasks/Task";
 
 const TaskForm = ({onAddTask}: TaskFormProps ) => {
     const [title, setTitle] = useState('');

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Task } from "../../Types/Interfaces/Task";
+import { Task } from "../../Types/Interfaces/Tasks/Task";
 import TaskForm from '../TaskForm';
 import TaskList from '../TaskList';
 
