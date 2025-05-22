@@ -6,16 +6,16 @@ export default function Login() {
 
     const [email, setEmail] = useState("");
     const [pw, setPw] = useState("");
-    const { signup } = useAuth();
+    const { login } = useAuth();
     const nav = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            await signup(email, pw);
+            await login(email, pw);
             nav("/");
         } catch (err) {
-            alert("Failed to log in")
+            alert("Failed to sign up")
         }
     };
 

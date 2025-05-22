@@ -3,7 +3,7 @@ import { AuthProvider, useAuth } from "./Context/AuthContext";
 import SignUp from "./Pages/SignUp";
 import Login from "./Pages/Login";
 
-import TaskManager from "./Components/Managers/TaskManger";
+import TaskManager from "./Pages/TaskManger";
 import { JSX } from "react/jsx-runtime";
 
 const PrivateRoute: React.FC<{ children: JSX.Element }> = ({ children }) => {
@@ -14,22 +14,22 @@ const PrivateRoute: React.FC<{ children: JSX.Element }> = ({ children }) => {
 function App() {
   return (
     <div className="App">
-      <AuthProvider>
-        <BrowserRouter>
+      <BrowserRouter>
+        <AuthProvider>
           <Routes>
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
-            <Route 
+            <Route
               path="/"
               element={
                 <PrivateRoute>
-                  <TaskManager/>
+                  <TaskManager />
                 </PrivateRoute>
               }
-              />
+            />
           </Routes>
-        </BrowserRouter>
-      </AuthProvider>
+        </AuthProvider>
+      </BrowserRouter>
     </div>
   );
 }

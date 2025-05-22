@@ -18,7 +18,6 @@ const TaskForm = ({onAddTask}: TaskFormProps ) => {
             dueDate,
             priority: "low"
         };
-
         onAddTask(newTask);
         setTitle("");
         setDescription("");
@@ -34,7 +33,7 @@ const TaskForm = ({onAddTask}: TaskFormProps ) => {
             <textarea
                 placeholder="Task Description"
                 value={description}
-                onChange={(e) => setDueDate(new Date(e.target.value))}
+                onChange={(e) => setDescription(e.target.value)}
             />
             <input 
                 type="date"

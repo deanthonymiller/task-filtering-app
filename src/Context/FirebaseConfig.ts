@@ -3,9 +3,9 @@ import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
 
-    apiKey: "",
+    apiKey: "AIzaSyCFAK_Xys9k9v99vM9VjGusuXBnb-KuaJg",
+    projectId: "task-filtering-app",
     authDomain: "",
-    projectId: "",
 }
 
 const app = initializeApp(firebaseConfig);

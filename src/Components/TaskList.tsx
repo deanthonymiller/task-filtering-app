@@ -34,12 +34,14 @@ const TaskList = ({ tasks, onHandleDeleteTask, onHandleToggleCompletion }: TaskL
                     <li key={task.id}>
                         <h3>{task.title}</h3>
                         <p>{task.description}</p>
-                        <p>Due: {task.dueDate.toLocaleDateString()}</p>
+                        <p>Due: {new Date(task.dueDate).toLocaleDateString()}</p>
                         <p>Status: {task.isCompleted ? "Completed" : "Pending"}</p>
                         <button onClick={() => onHandleToggleCompletion(task.id)}>
                             Toggle status
                         </button>
-                        <button onClick={() => onHandleDeleteTask(task.id)}></button>
+                        <button onClick={() => onHandleDeleteTask(task.id)}>
+                            Delete
+                        </button>
                     </li>
                 ))}
             </ul>
