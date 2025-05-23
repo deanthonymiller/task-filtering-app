@@ -20,22 +20,35 @@ export default function Login() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="email"
-                placeholder="Email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-                type="password"
-                placeholder="Password"
-                required
-                value={pw}
-                onChange={(e) => setPw(e.target.value)}
-            />
-            <button type="submit">Log In</button>
-        </form>
+        <div className="min-h-screen flex items-center justify-center bg-gray-50">
+            <form
+                className="bg-white p-8 rounded-2xl shadow-md w-full max-w-sm"
+                onSubmit={handleSubmit}>
+                <h2 className="text-2xl front-semibold mb-6 text-center">Login</h2>
+                <label className="block mb-2">
+                    <span className="text-gray-700">Email</span>
+                    <input
+                        type="email"
+                        className="mt-1 block w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        placeholder="Email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </label>
+                <label className="block mb-4">
+                    <span className="text-gray-700">Password</span>
+                    <input
+                        type="password"
+                        required
+                        value={pw}
+                        onChange={(e) => setPw(e.target.value)}
+                        className="mt-1 block w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        placeholder="••••••••"
+                    />
+                </label>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
     )
 }
