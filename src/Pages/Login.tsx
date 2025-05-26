@@ -47,7 +47,10 @@ export default function Login() {
                         placeholder="••••••••"
                     />
                 </label>
-                <button type="submit">Log In</button>
+                <button
+                type="submit"
+                className="w-full py-2 rounded-lg bg-indigo-50 text-white font-medium hover:bg-indigo-700 transition"
+                >Log In</button>
             </form>
         </div>
     )

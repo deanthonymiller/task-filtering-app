@@ -41,14 +41,20 @@ const TaskManager = () => {
     }, [])
 
     return (
-        <div>
-            <h1>Task Manager</h1>
-            <TaskForm onAddTask={handleAddTask} />
-            <TaskList
-                tasks={tasks}
-                onHandleDeleteTask={handleDeleteTask}
-                onHandleToggleCompletion={handleToggleCompletion}
-            />
+        <div className="min-h-screen bg-gray-100 p-6">
+            <div className="max-w-3xl mx-auto space-y-6">
+                <h1 className="text-3xl font-bold text-center">My Tasks</h1>
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                    <TaskForm onAddTask={handleAddTask} />
+                </div>
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                    <TaskList
+                        tasks={tasks}
+                        onHandleDeleteTask={handleDeleteTask}
+                        onHandleToggleCompletion={handleToggleCompletion}
+                    />
+                </div>
+            </div>
         </div>
     );
 };

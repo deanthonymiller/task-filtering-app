@@ -20,22 +20,39 @@ export default function SignUp() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="email"
-                placeholder="Email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-                type="password"
-                placeholder="Password"
-                required
-                value={pw}
-                onChange={(e) => setPw(e.target.value)}
-            />
-            <button type="submit">Log In</button>
-        </form>
+        <div className="min-h-screen flex items-center justify-center bg-gray-50">
+            <form
+                onSubmit={handleSubmit}
+                className="bg-white p-8 rounded-2xl shadow-md w-full max-w-sm">
+                <h2 className="text-2xl font-semibold mb-6 text-center">Sign Up</h2>
+                <label className="block mb-2">
+                    <span className="text-gray-700">Email</span>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="mt-1 block w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+                    />
+                </label>
+                <label className="block mb-4">
+                    <span className="text-gray-700"></span>
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        required
+                        value={pw}
+                        onChange={(e) => setPw(e.target.value)}
+                        className="mt-1 block w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+                    />
+                </label>
+                <button
+                    type="submit"
+                    className="w-full py-2 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition"
+                >Log In
+                </button>
+            </form>
+        </div>
     )
 }
