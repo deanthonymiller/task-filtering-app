@@ -32,16 +32,22 @@ const TaskList = ({ tasks, onHandleDeleteTask, onHandleToggleCompletion }: TaskL
             <ul className="space-y-4">
                 {filteredTasks.map((task) => (
                     <li key={task.id}
-                    className="flex justify-between items-center p-4 border rounded-lg"
+                        className="flex justify-between items-center p-4 border rounded-lg"
                     >
                         <h3 className="font-medium text-lg">{task.title}</h3>
                         <p className="text-gray-600">{task.description}</p>
                         <p className="text-sm text-gray-500">Due: {new Date(task.dueDate).toLocaleDateString()}</p>
                         <p>Status: {task.isCompleted ? "Completed" : "Pending"}</p>
-                        <button onClick={() => onHandleToggleCompletion(task.id)}>
-                            Toggle status
-                        </button>
-                        <button onClick={() => onHandleDeleteTask(task.id)}>
+                        <div className="space-x-2">
+                            <button
+                                onClick={() => onHandleToggleCompletion(task.id)}
+                                className={`px-3 py-1 rounded ${task.isCompleted ? "bg-green-200 text-green-800" : "bg-yellow-200 text-yellow-800"}`}
+                            >
+                                {task.isCompleted ? "Done" : "pending"}
+                            </button>
+                        </div>
+                        <button onClick={() => onHandleDeleteTask(task.id)}
+                            className="px-3 py-1 rounded bg-red-200 text-red-800">
                             Delete
                         </button>
                     </li>
