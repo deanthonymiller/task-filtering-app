@@ -29,12 +29,14 @@ const TaskList = ({ tasks, onHandleDeleteTask, onHandleToggleCompletion }: TaskL
                 <button onClick={() => handleFilterChange("pending")}>Pending</button>
             </div>
 
-            <ul>
+            <ul className="space-y-4">
                 {filteredTasks.map((task) => (
-                    <li key={task.id}>
-                        <h3>{task.title}</h3>
-                        <p>{task.description}</p>
-                        <p>Due: {new Date(task.dueDate).toLocaleDateString()}</p>
+                    <li key={task.id}
+                    className="flex justify-between items-center p-4 border rounded-lg"
+                    >
+                        <h3 className="font-medium text-lg">{task.title}</h3>
+                        <p className="text-gray-600">{task.description}</p>
+                        <p className="text-sm text-gray-500">Due: {new Date(task.dueDate).toLocaleDateString()}</p>
                         <p>Status: {task.isCompleted ? "Completed" : "Pending"}</p>
                         <button onClick={() => onHandleToggleCompletion(task.id)}>
                             Toggle status
